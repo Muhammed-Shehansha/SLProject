@@ -1,0 +1,480 @@
+2025-02-22 11:51:54.617 +05:30 [INF] Application is shutting down...
+2025-02-22 12:21:52.353 +05:30 [INF] Starting the application...
+2025-02-22 12:21:52.496 +05:30 [INF] User profile is available. Using 'C:\Users\muhammed.makkar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-02-22 12:21:52.671 +05:30 [INF] Now listening on: http://localhost:5268
+2025-02-22 12:21:52.674 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-22 12:21:52.676 +05:30 [INF] Hosting environment: Development
+2025-02-22 12:21:52.677 +05:30 [INF] Content root path: C:\Users\muhammed.makkar\Desktop\Dotnet-test\webapi\TechnicianWebAPI
+2025-02-22 12:22:00.014 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5268/api/auth/login - null null
+2025-02-22 12:22:00.259 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-02-22 12:22:00.272 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:22:00.379 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5268/api/auth/login - 204 null null 366.66ms
+2025-02-22 12:22:00.563 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5268/api/auth/login - application/json 46
+2025-02-22 12:22:00.592 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:22:00.704 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.AuthController.Login (WebAPITask)'
+2025-02-22 12:22:00.724 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(TechnicianWebAPI.DTOs.LoginUserDto) on controller TmsWebApi.Controllers.AuthController (WebAPITask).
+2025-02-22 12:22:00.959 +05:30 [INF] Login attempt for username: Shehansha
+2025-02-22 12:22:02.279 +05:30 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Password], [u].[PhoneNumber], [u].[Role], [u].[Skills], [u].[Username]
+FROM [Users] AS [u]
+2025-02-22 12:22:03.123 +05:30 [INF] Login successful for username: Shehansha
+2025-02-22 12:22:03.140 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`5[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-22 12:22:03.165 +05:30 [INF] Executed action TmsWebApi.Controllers.AuthController.Login (WebAPITask) in 2436.2448ms
+2025-02-22 12:22:03.166 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.AuthController.Login (WebAPITask)'
+2025-02-22 12:22:03.181 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5268/api/auth/login - 200 null application/json; charset=utf-8 2618.4608ms
+2025-02-22 12:22:05.243 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5268/api/Task/GetTaskSummary - null null
+2025-02-22 12:22:05.245 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5268/api/Task/GetTaskSummary - null null
+2025-02-22 12:22:05.506 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:22:05.595 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5268/api/Task/GetTaskSummary - 204 null null 351.8659ms
+2025-02-22 12:22:05.632 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:22:05.633 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5268/api/Task/GetTaskSummary - application/json null
+2025-02-22 12:22:05.816 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5268/api/Task/GetTaskSummary - 204 null null 570.9316ms
+2025-02-22 12:22:05.831 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:22:05.978 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.TaskController.GetTaskSummary (WebAPITask)'
+2025-02-22 12:22:05.997 +05:30 [INF] Route matched with {action = "GetTaskSummary", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTaskSummary() on controller TmsWebApi.Controllers.TaskController (WebAPITask).
+2025-02-22 12:22:06.012 +05:30 [INF] Fetching task summary counts.
+2025-02-22 12:22:06.428 +05:30 [INF] Executed DbCommand (85ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tasks] AS [t]
+WHERE [t].[AssignedToId] = @__userId_0
+2025-02-22 12:22:06.497 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tasks] AS [t]
+WHERE [t].[AssignedToId] = @__userId_0 AND [t].[Status] = N'Pending'
+2025-02-22 12:22:06.532 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tasks] AS [t]
+WHERE [t].[AssignedToId] = @__userId_0 AND [t].[Status] = N'Completed'
+2025-02-22 12:22:06.545 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`3[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-22 12:22:06.596 +05:30 [INF] Executed action TmsWebApi.Controllers.TaskController.GetTaskSummary (WebAPITask) in 596.9723ms
+2025-02-22 12:22:06.599 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5268/api/Task/GetTaskSummary - application/json null
+2025-02-22 12:22:06.600 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.TaskController.GetTaskSummary (WebAPITask)'
+2025-02-22 12:22:06.608 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:22:06.616 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5268/api/Task/GetTaskSummary - 200 null application/json; charset=utf-8 983.1564ms
+2025-02-22 12:22:06.647 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.TaskController.GetTaskSummary (WebAPITask)'
+2025-02-22 12:22:06.663 +05:30 [INF] Route matched with {action = "GetTaskSummary", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTaskSummary() on controller TmsWebApi.Controllers.TaskController (WebAPITask).
+2025-02-22 12:22:06.675 +05:30 [INF] Fetching task summary counts.
+2025-02-22 12:22:06.786 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tasks] AS [t]
+WHERE [t].[AssignedToId] = @__userId_0
+2025-02-22 12:22:06.794 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tasks] AS [t]
+WHERE [t].[AssignedToId] = @__userId_0 AND [t].[Status] = N'Pending'
+2025-02-22 12:22:06.798 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tasks] AS [t]
+WHERE [t].[AssignedToId] = @__userId_0 AND [t].[Status] = N'Completed'
+2025-02-22 12:22:06.800 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`3[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-22 12:22:06.808 +05:30 [INF] Executed action TmsWebApi.Controllers.TaskController.GetTaskSummary (WebAPITask) in 143.1262ms
+2025-02-22 12:22:06.810 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.TaskController.GetTaskSummary (WebAPITask)'
+2025-02-22 12:22:06.815 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5268/api/Task/GetTaskSummary - 200 null application/json; charset=utf-8 213.6228ms
+2025-02-22 12:22:19.995 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5268/api/Task/GetAssignedTasks - null null
+2025-02-22 12:22:19.996 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5268/api/Task/GetAssignedTasks - null null
+2025-02-22 12:22:19.997 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:22:20.001 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:22:20.002 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5268/api/Task/GetAssignedTasks - 204 null null 7.037ms
+2025-02-22 12:22:20.032 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5268/api/Task/GetAssignedTasks - 204 null null 36.4612ms
+2025-02-22 12:22:20.069 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5268/api/Task/GetAssignedTasks - null null
+2025-02-22 12:22:20.086 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:22:20.099 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.TaskController.GetAssignedTasks (WebAPITask)'
+2025-02-22 12:22:20.104 +05:30 [INF] Route matched with {action = "GetAssignedTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssignedTasks() on controller TmsWebApi.Controllers.TaskController (WebAPITask).
+2025-02-22 12:22:20.116 +05:30 [INF] Fetching assigned tasks for user ID: 5
+2025-02-22 12:22:20.119 +05:30 [INF] Fetching tasks for technician ID: 5
+2025-02-22 12:22:20.163 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@__technicianId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AssignedToId], [t].[Description], [t].[DueDate], [t].[Status], [t].[Title]
+FROM [Tasks] AS [t]
+WHERE [t].[AssignedToId] = @__technicianId_0
+2025-02-22 12:22:20.186 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TmsWebApi.Models.Tasks, WebAPITask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-22 12:22:20.202 +05:30 [INF] Executed action TmsWebApi.Controllers.TaskController.GetAssignedTasks (WebAPITask) in 89.1285ms
+2025-02-22 12:22:20.208 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5268/api/Task/GetAssignedTasks - null null
+2025-02-22 12:22:20.211 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.TaskController.GetAssignedTasks (WebAPITask)'
+2025-02-22 12:22:20.213 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:22:20.214 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5268/api/Task/GetAssignedTasks - 200 null application/json; charset=utf-8 144.6593ms
+2025-02-22 12:22:20.216 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.TaskController.GetAssignedTasks (WebAPITask)'
+2025-02-22 12:22:20.220 +05:30 [INF] Route matched with {action = "GetAssignedTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssignedTasks() on controller TmsWebApi.Controllers.TaskController (WebAPITask).
+2025-02-22 12:22:20.226 +05:30 [INF] Fetching assigned tasks for user ID: 5
+2025-02-22 12:22:20.228 +05:30 [INF] Fetching tasks for technician ID: 5
+2025-02-22 12:22:20.230 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__technicianId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AssignedToId], [t].[Description], [t].[DueDate], [t].[Status], [t].[Title]
+FROM [Tasks] AS [t]
+WHERE [t].[AssignedToId] = @__technicianId_0
+2025-02-22 12:22:20.236 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TmsWebApi.Models.Tasks, WebAPITask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-22 12:22:20.237 +05:30 [INF] Executed action TmsWebApi.Controllers.TaskController.GetAssignedTasks (WebAPITask) in 13.0106ms
+2025-02-22 12:22:20.241 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.TaskController.GetAssignedTasks (WebAPITask)'
+2025-02-22 12:22:20.242 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5268/api/Task/GetAssignedTasks - 200 null application/json; charset=utf-8 34.3473ms
+2025-02-22 12:22:47.536 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5268/api/Task/UpdateTaskStatus/1 - null null
+2025-02-22 12:22:47.539 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:22:47.540 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5268/api/Task/UpdateTaskStatus/1 - 204 null null 3.8184ms
+2025-02-22 12:22:47.543 +05:30 [INF] Request starting HTTP/1.1 PATCH http://localhost:5268/api/Task/UpdateTaskStatus/1 - application/json 9
+2025-02-22 12:22:47.556 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:22:47.557 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.TaskController.UpdateTaskStatus (WebAPITask)'
+2025-02-22 12:22:47.561 +05:30 [INF] Route matched with {action = "UpdateTaskStatus", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateTaskStatus(Int32, System.String) on controller TmsWebApi.Controllers.TaskController (WebAPITask).
+2025-02-22 12:22:47.575 +05:30 [INF] Updating task status. Task ID: 1, User ID: 5
+2025-02-22 12:22:47.578 +05:30 [INF] Fetching tasks for user ID: 5
+2025-02-22 12:22:47.604 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AssignedToId], [t].[Description], [t].[DueDate], [t].[Status], [t].[Title]
+FROM [Tasks] AS [t]
+WHERE [t].[AssignedToId] = @__userId_0
+2025-02-22 12:22:47.610 +05:30 [INF] Updating status for task ID: 1
+2025-02-22 12:22:47.776 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Tasks] SET [Status] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2025-02-22 12:22:47.792 +05:30 [INF] Task status updated successfully. Task ID: 1, Status: Pending
+2025-02-22 12:22:47.800 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-02-22 12:22:47.801 +05:30 [INF] Executed action TmsWebApi.Controllers.TaskController.UpdateTaskStatus (WebAPITask) in 232.2021ms
+2025-02-22 12:22:47.803 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.TaskController.UpdateTaskStatus (WebAPITask)'
+2025-02-22 12:22:47.804 +05:30 [INF] Request finished HTTP/1.1 PATCH http://localhost:5268/api/Task/UpdateTaskStatus/1 - 204 null null 260.8201ms
+2025-02-22 12:22:49.453 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5268/api/Task/GetAssignedTasks - null null
+2025-02-22 12:22:49.467 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:22:49.469 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5268/api/Task/GetAssignedTasks - 204 null null 16.5925ms
+2025-02-22 12:22:49.476 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5268/api/Task/GetAssignedTasks - null null
+2025-02-22 12:22:49.484 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:22:49.486 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.TaskController.GetAssignedTasks (WebAPITask)'
+2025-02-22 12:22:49.487 +05:30 [INF] Route matched with {action = "GetAssignedTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssignedTasks() on controller TmsWebApi.Controllers.TaskController (WebAPITask).
+2025-02-22 12:22:49.489 +05:30 [INF] Fetching assigned tasks for user ID: 5
+2025-02-22 12:22:49.494 +05:30 [INF] Fetching tasks for technician ID: 5
+2025-02-22 12:22:49.507 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__technicianId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AssignedToId], [t].[Description], [t].[DueDate], [t].[Status], [t].[Title]
+FROM [Tasks] AS [t]
+WHERE [t].[AssignedToId] = @__technicianId_0
+2025-02-22 12:22:49.527 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TmsWebApi.Models.Tasks, WebAPITask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-22 12:22:49.545 +05:30 [INF] Executed action TmsWebApi.Controllers.TaskController.GetAssignedTasks (WebAPITask) in 56.1769ms
+2025-02-22 12:22:49.560 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.TaskController.GetAssignedTasks (WebAPITask)'
+2025-02-22 12:22:49.569 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5268/api/Task/GetAssignedTasks - 200 null application/json; charset=utf-8 92.4323ms
+2025-02-22 12:22:54.976 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5268/api/Task/UpdateTaskStatus/1 - null null
+2025-02-22 12:22:54.979 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:22:54.984 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5268/api/Task/UpdateTaskStatus/1 - 204 null null 7.4906ms
+2025-02-22 12:22:54.990 +05:30 [INF] Request starting HTTP/1.1 PATCH http://localhost:5268/api/Task/UpdateTaskStatus/1 - application/json 11
+2025-02-22 12:22:54.993 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:22:54.995 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.TaskController.UpdateTaskStatus (WebAPITask)'
+2025-02-22 12:22:55.004 +05:30 [INF] Route matched with {action = "UpdateTaskStatus", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateTaskStatus(Int32, System.String) on controller TmsWebApi.Controllers.TaskController (WebAPITask).
+2025-02-22 12:22:55.008 +05:30 [INF] Updating task status. Task ID: 1, User ID: 5
+2025-02-22 12:22:55.011 +05:30 [INF] Fetching tasks for user ID: 5
+2025-02-22 12:22:55.025 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AssignedToId], [t].[Description], [t].[DueDate], [t].[Status], [t].[Title]
+FROM [Tasks] AS [t]
+WHERE [t].[AssignedToId] = @__userId_0
+2025-02-22 12:22:55.028 +05:30 [INF] Updating status for task ID: 1
+2025-02-22 12:22:55.041 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Tasks] SET [Status] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2025-02-22 12:22:55.045 +05:30 [INF] Task status updated successfully. Task ID: 1, Status: Completed
+2025-02-22 12:22:55.046 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-02-22 12:22:55.057 +05:30 [INF] Executed action TmsWebApi.Controllers.TaskController.UpdateTaskStatus (WebAPITask) in 49.2997ms
+2025-02-22 12:22:55.059 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.TaskController.UpdateTaskStatus (WebAPITask)'
+2025-02-22 12:22:55.060 +05:30 [INF] Request finished HTTP/1.1 PATCH http://localhost:5268/api/Task/UpdateTaskStatus/1 - 204 null null 70.6258ms
+2025-02-22 12:22:56.858 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5268/api/Task/GetAssignedTasks - null null
+2025-02-22 12:22:56.862 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:22:56.863 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5268/api/Task/GetAssignedTasks - 204 null null 5.6464ms
+2025-02-22 12:22:56.875 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5268/api/Task/GetAssignedTasks - null null
+2025-02-22 12:22:56.878 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:22:56.880 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.TaskController.GetAssignedTasks (WebAPITask)'
+2025-02-22 12:22:56.888 +05:30 [INF] Route matched with {action = "GetAssignedTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssignedTasks() on controller TmsWebApi.Controllers.TaskController (WebAPITask).
+2025-02-22 12:22:56.890 +05:30 [INF] Fetching assigned tasks for user ID: 5
+2025-02-22 12:22:56.891 +05:30 [INF] Fetching tasks for technician ID: 5
+2025-02-22 12:22:56.904 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__technicianId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AssignedToId], [t].[Description], [t].[DueDate], [t].[Status], [t].[Title]
+FROM [Tasks] AS [t]
+WHERE [t].[AssignedToId] = @__technicianId_0
+2025-02-22 12:22:56.922 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TmsWebApi.Models.Tasks, WebAPITask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-22 12:22:56.926 +05:30 [INF] Executed action TmsWebApi.Controllers.TaskController.GetAssignedTasks (WebAPITask) in 35.9458ms
+2025-02-22 12:22:56.941 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.TaskController.GetAssignedTasks (WebAPITask)'
+2025-02-22 12:22:56.951 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5268/api/Task/GetAssignedTasks - 200 null application/json; charset=utf-8 74.5626ms
+2025-02-22 12:23:14.300 +05:30 [INF] Application is shutting down...
+2025-02-22 12:23:48.182 +05:30 [INF] Starting the application...
+2025-02-22 12:23:48.290 +05:30 [INF] User profile is available. Using 'C:\Users\muhammed.makkar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-02-22 12:23:48.601 +05:30 [INF] Now listening on: http://localhost:5268
+2025-02-22 12:23:48.725 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-22 12:23:48.726 +05:30 [INF] Hosting environment: Development
+2025-02-22 12:23:48.732 +05:30 [INF] Content root path: C:\Users\muhammed.makkar\Desktop\Dotnet-test\webapi\TechnicianWebAPI
+2025-02-22 12:23:55.953 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5268/api/Auth/login - application/json; charset=utf-8 43
+2025-02-22 12:23:56.005 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-02-22 12:23:56.054 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.AuthController.Login (WebAPITask)'
+2025-02-22 12:23:56.073 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(TechnicianWebAPI.DTOs.LoginUserDto) on controller TmsWebApi.Controllers.AuthController (WebAPITask).
+2025-02-22 12:23:56.307 +05:30 [INF] Login attempt for username: Admin
+2025-02-22 12:23:57.744 +05:30 [INF] Executed DbCommand (46ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Password], [u].[PhoneNumber], [u].[Role], [u].[Skills], [u].[Username]
+FROM [Users] AS [u]
+2025-02-22 12:23:58.476 +05:30 [INF] Login successful for username: Admin
+2025-02-22 12:23:58.485 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`5[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-22 12:23:58.511 +05:30 [INF] Executed action TmsWebApi.Controllers.AuthController.Login (WebAPITask) in 2433.7689ms
+2025-02-22 12:23:58.527 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.AuthController.Login (WebAPITask)'
+2025-02-22 12:23:58.550 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5268/api/Auth/login - 200 null application/json; charset=utf-8 2597.0935ms
+2025-02-22 12:23:58.712 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5268/api/Task/GetTaskSummary - null null
+2025-02-22 12:23:58.817 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.TaskController.GetTaskSummary (WebAPITask)'
+2025-02-22 12:23:58.839 +05:30 [INF] Route matched with {action = "GetTaskSummary", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTaskSummary() on controller TmsWebApi.Controllers.TaskController (WebAPITask).
+2025-02-22 12:23:58.870 +05:30 [INF] Fetching task summary counts.
+2025-02-22 12:23:59.059 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tasks] AS [t]
+2025-02-22 12:23:59.137 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tasks] AS [t]
+WHERE [t].[Status] = N'Pending'
+2025-02-22 12:23:59.177 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tasks] AS [t]
+WHERE [t].[Status] = N'Completed'
+2025-02-22 12:23:59.191 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`3[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-22 12:23:59.209 +05:30 [INF] Executed action TmsWebApi.Controllers.TaskController.GetTaskSummary (WebAPITask) in 366.0974ms
+2025-02-22 12:23:59.220 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.TaskController.GetTaskSummary (WebAPITask)'
+2025-02-22 12:23:59.227 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5268/api/Task/GetTaskSummary - 200 null application/json; charset=utf-8 514.3987ms
+2025-02-22 12:24:11.228 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5268/api/Task/GetAllTasks - null null
+2025-02-22 12:24:11.261 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask)'
+2025-02-22 12:24:11.279 +05:30 [INF] Route matched with {action = "GetAllTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllTasks() on controller TmsWebApi.Controllers.TaskController (WebAPITask).
+2025-02-22 12:24:11.292 +05:30 [INF] Fetching all tasks with assigned technician names.
+2025-02-22 12:24:11.471 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Title], [t].[Description], [t].[DueDate], [t].[Status], [u].[Id] AS [AssignedToId], [u].[Username] AS [AssignedTechnician]
+FROM [Tasks] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[AssignedToId] = [u].[Id]
+2025-02-22 12:24:11.491 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType6`7[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebAPITask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-22 12:24:11.715 +05:30 [INF] Executed action TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask) in 434.9171ms
+2025-02-22 12:24:11.724 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask)'
+2025-02-22 12:24:11.727 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5268/api/Task/GetAllTasks - 200 null application/json; charset=utf-8 498.2024ms
+2025-02-22 12:24:28.958 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5268/api/Notification/GetNotifications - null null
+2025-02-22 12:24:28.959 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5268/api/Notification/GetNotifications - null null
+2025-02-22 12:24:28.963 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:24:28.966 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:24:28.967 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5268/api/Notification/GetNotifications - 204 null null 8.3953ms
+2025-02-22 12:24:28.969 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5268/api/Notification/GetNotifications - 204 null null 9.7662ms
+2025-02-22 12:24:28.995 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5268/api/Notification/GetNotifications - null null
+2025-02-22 12:24:28.997 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:24:29.000 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.NotificationController.GetNotifications (WebAPITask)'
+2025-02-22 12:24:29.002 +05:30 [INF] Route matched with {action = "GetNotifications", controller = "Notification"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetNotifications() on controller TmsWebApi.Controllers.NotificationController (WebAPITask).
+2025-02-22 12:24:29.016 +05:30 [INF] Fetching notifications for user ID: 5
+2025-02-22 12:24:29.081 +05:30 [INF] Executed DbCommand (31ms) [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[IsRead], [n].[Message], [n].[UserId]
+FROM [Notifications] AS [n]
+WHERE [n].[UserId] = @__Parse_0
+2025-02-22 12:24:29.101 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TmsWebApi.Models.Notification, WebAPITask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-22 12:24:29.114 +05:30 [INF] Executed action TmsWebApi.Controllers.NotificationController.GetNotifications (WebAPITask) in 102.6833ms
+2025-02-22 12:24:29.116 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5268/api/Notification/GetNotifications - null null
+2025-02-22 12:24:29.119 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.NotificationController.GetNotifications (WebAPITask)'
+2025-02-22 12:24:29.128 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:24:29.131 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5268/api/Notification/GetNotifications - 200 null application/json; charset=utf-8 135.8729ms
+2025-02-22 12:24:29.148 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.NotificationController.GetNotifications (WebAPITask)'
+2025-02-22 12:24:29.161 +05:30 [INF] Route matched with {action = "GetNotifications", controller = "Notification"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetNotifications() on controller TmsWebApi.Controllers.NotificationController (WebAPITask).
+2025-02-22 12:24:29.169 +05:30 [INF] Fetching notifications for user ID: 5
+2025-02-22 12:24:29.187 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[IsRead], [n].[Message], [n].[UserId]
+FROM [Notifications] AS [n]
+WHERE [n].[UserId] = @__Parse_0
+2025-02-22 12:24:29.193 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TmsWebApi.Models.Notification, WebAPITask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-22 12:24:29.195 +05:30 [INF] Executed action TmsWebApi.Controllers.NotificationController.GetNotifications (WebAPITask) in 26.1936ms
+2025-02-22 12:24:29.197 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.NotificationController.GetNotifications (WebAPITask)'
+2025-02-22 12:24:29.198 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5268/api/Notification/GetNotifications - 200 null application/json; charset=utf-8 81.698ms
+2025-02-22 12:24:34.887 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5268/api/Technician/GetAllTechnicians - null null
+2025-02-22 12:24:34.896 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.TechnicianController.GetAllTechnicians (WebAPITask)'
+2025-02-22 12:24:34.903 +05:30 [INF] Route matched with {action = "GetAllTechnicians", controller = "Technician"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllTechnicians() on controller TmsWebApi.Controllers.TechnicianController (WebAPITask).
+2025-02-22 12:24:34.920 +05:30 [INF] Fetching all technicians.
+2025-02-22 12:24:34.936 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Password], [u].[PhoneNumber], [u].[Role], [u].[Skills], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Role] = N'Technician'
+2025-02-22 12:24:34.941 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TmsWebApi.Models.User, WebAPITask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-22 12:24:34.946 +05:30 [INF] Executed action TmsWebApi.Controllers.TechnicianController.GetAllTechnicians (WebAPITask) in 28.9169ms
+2025-02-22 12:24:34.948 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.TechnicianController.GetAllTechnicians (WebAPITask)'
+2025-02-22 12:24:34.949 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5268/api/Technician/GetAllTechnicians - 200 null application/json; charset=utf-8 62.3286ms
+2025-02-22 12:25:19.716 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5268/api/Task/AddTask - application/json; charset=utf-8 140
+2025-02-22 12:25:19.722 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.TaskController.AddTask (WebAPITask)'
+2025-02-22 12:25:19.728 +05:30 [INF] Route matched with {action = "AddTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddTask(TechnicianWebAPI.DTOs.AddTaskDto) on controller TmsWebApi.Controllers.TaskController (WebAPITask).
+2025-02-22 12:25:19.761 +05:30 [INF] Adding new task: Plumbing work
+2025-02-22 12:25:19.763 +05:30 [INF] Adding a new task: Plumbing work
+2025-02-22 12:25:19.809 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@__task_AssignedToId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Id] = @__task_AssignedToId_0 AND [u].[Role] = N'Technician') THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-02-22 12:25:20.047 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Boolean), @p1='?' (Size = 500), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (Size = 500), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Notifications] ([IsRead], [Message], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2);
+INSERT INTO [Tasks] ([AssignedToId], [Description], [DueDate], [Status], [Title])
+OUTPUT INSERTED.[Id]
+VALUES (@p3, @p4, @p5, @p6, @p7);
+2025-02-22 12:25:20.098 +05:30 [INF] Task added successfully: Plumbing work
+2025-02-22 12:25:20.107 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'TmsWebApi.Models.Tasks'.
+2025-02-22 12:25:20.145 +05:30 [INF] Executed action TmsWebApi.Controllers.TaskController.AddTask (WebAPITask) in 415.8806ms
+2025-02-22 12:25:20.147 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.TaskController.AddTask (WebAPITask)'
+2025-02-22 12:25:20.148 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5268/api/Task/AddTask - 201 null application/json; charset=utf-8 432.8493ms
+2025-02-22 12:25:20.280 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5268/api/Task/GetAllTasks - null null
+2025-02-22 12:25:20.448 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask)'
+2025-02-22 12:25:20.449 +05:30 [INF] Route matched with {action = "GetAllTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllTasks() on controller TmsWebApi.Controllers.TaskController (WebAPITask).
+2025-02-22 12:25:20.457 +05:30 [INF] Fetching all tasks with assigned technician names.
+2025-02-22 12:25:20.464 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Title], [t].[Description], [t].[DueDate], [t].[Status], [u].[Id] AS [AssignedToId], [u].[Username] AS [AssignedTechnician]
+FROM [Tasks] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[AssignedToId] = [u].[Id]
+2025-02-22 12:25:20.466 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType6`7[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebAPITask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-22 12:25:20.498 +05:30 [INF] Executed action TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask) in 41.0099ms
+2025-02-22 12:25:20.547 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask)'
+2025-02-22 12:25:20.548 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5268/api/Task/GetAllTasks - 200 null application/json; charset=utf-8 268.3901ms
+2025-02-22 12:25:25.650 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5268/api/Task/GetAssignedTasks - null null
+2025-02-22 12:25:25.656 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5268/api/Task/GetAssignedTasks - null null
+2025-02-22 12:25:25.668 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:25:25.675 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:25:25.680 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5268/api/Task/GetAssignedTasks - 204 null null 23.7439ms
+2025-02-22 12:25:25.681 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5268/api/Task/GetAssignedTasks - 204 null null 31.4201ms
+2025-02-22 12:25:25.693 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5268/api/Task/GetAssignedTasks - null null
+2025-02-22 12:25:25.697 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:25:25.698 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.TaskController.GetAssignedTasks (WebAPITask)'
+2025-02-22 12:25:25.711 +05:30 [INF] Route matched with {action = "GetAssignedTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssignedTasks() on controller TmsWebApi.Controllers.TaskController (WebAPITask).
+2025-02-22 12:25:25.714 +05:30 [INF] Fetching assigned tasks for user ID: 5
+2025-02-22 12:25:25.716 +05:30 [INF] Fetching tasks for technician ID: 5
+2025-02-22 12:25:25.744 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__technicianId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AssignedToId], [t].[Description], [t].[DueDate], [t].[Status], [t].[Title]
+FROM [Tasks] AS [t]
+WHERE [t].[AssignedToId] = @__technicianId_0
+2025-02-22 12:25:25.760 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TmsWebApi.Models.Tasks, WebAPITask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-22 12:25:25.766 +05:30 [INF] Executed action TmsWebApi.Controllers.TaskController.GetAssignedTasks (WebAPITask) in 53.8066ms
+2025-02-22 12:25:25.773 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.TaskController.GetAssignedTasks (WebAPITask)'
+2025-02-22 12:25:25.773 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5268/api/Task/GetAssignedTasks - null null
+2025-02-22 12:25:25.776 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5268/api/Task/GetAssignedTasks - 200 null application/json; charset=utf-8 82.5276ms
+2025-02-22 12:25:25.784 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:25:25.799 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.TaskController.GetAssignedTasks (WebAPITask)'
+2025-02-22 12:25:25.799 +05:30 [INF] Route matched with {action = "GetAssignedTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssignedTasks() on controller TmsWebApi.Controllers.TaskController (WebAPITask).
+2025-02-22 12:25:25.805 +05:30 [INF] Fetching assigned tasks for user ID: 5
+2025-02-22 12:25:25.807 +05:30 [INF] Fetching tasks for technician ID: 5
+2025-02-22 12:25:25.810 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__technicianId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AssignedToId], [t].[Description], [t].[DueDate], [t].[Status], [t].[Title]
+FROM [Tasks] AS [t]
+WHERE [t].[AssignedToId] = @__technicianId_0
+2025-02-22 12:25:25.814 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TmsWebApi.Models.Tasks, WebAPITask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-22 12:25:25.815 +05:30 [INF] Executed action TmsWebApi.Controllers.TaskController.GetAssignedTasks (WebAPITask) in 14.1883ms
+2025-02-22 12:25:25.817 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.TaskController.GetAssignedTasks (WebAPITask)'
+2025-02-22 12:25:25.817 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5268/api/Task/GetAssignedTasks - 200 null application/json; charset=utf-8 44.2188ms
+2025-02-22 12:25:30.715 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5268/api/Notification/GetNotifications - null null
+2025-02-22 12:25:30.717 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5268/api/Notification/GetNotifications - null null
+2025-02-22 12:25:30.719 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:25:30.769 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:25:30.782 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5268/api/Notification/GetNotifications - 204 null null 67.394ms
+2025-02-22 12:25:30.785 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5268/api/Notification/GetNotifications - 204 null null 68.4641ms
+2025-02-22 12:25:30.802 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5268/api/Notification/GetNotifications - null null
+2025-02-22 12:25:30.827 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:25:30.833 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.NotificationController.GetNotifications (WebAPITask)'
+2025-02-22 12:25:30.840 +05:30 [INF] Route matched with {action = "GetNotifications", controller = "Notification"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetNotifications() on controller TmsWebApi.Controllers.NotificationController (WebAPITask).
+2025-02-22 12:25:30.843 +05:30 [INF] Fetching notifications for user ID: 5
+2025-02-22 12:25:30.860 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[IsRead], [n].[Message], [n].[UserId]
+FROM [Notifications] AS [n]
+WHERE [n].[UserId] = @__Parse_0
+2025-02-22 12:25:30.862 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TmsWebApi.Models.Notification, WebAPITask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-22 12:25:30.864 +05:30 [INF] Executed action TmsWebApi.Controllers.NotificationController.GetNotifications (WebAPITask) in 21.2843ms
+2025-02-22 12:25:30.865 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.NotificationController.GetNotifications (WebAPITask)'
+2025-02-22 12:25:30.866 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5268/api/Notification/GetNotifications - 200 null application/json; charset=utf-8 63.9419ms
+2025-02-22 12:25:30.900 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5268/api/Notification/GetNotifications - null null
+2025-02-22 12:25:30.908 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:25:30.910 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.NotificationController.GetNotifications (WebAPITask)'
+2025-02-22 12:25:30.913 +05:30 [INF] Route matched with {action = "GetNotifications", controller = "Notification"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetNotifications() on controller TmsWebApi.Controllers.NotificationController (WebAPITask).
+2025-02-22 12:25:30.918 +05:30 [INF] Fetching notifications for user ID: 5
+2025-02-22 12:25:30.926 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__Parse_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[IsRead], [n].[Message], [n].[UserId]
+FROM [Notifications] AS [n]
+WHERE [n].[UserId] = @__Parse_0
+2025-02-22 12:25:30.930 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TmsWebApi.Models.Notification, WebAPITask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-22 12:25:30.932 +05:30 [INF] Executed action TmsWebApi.Controllers.NotificationController.GetNotifications (WebAPITask) in 14.0867ms
+2025-02-22 12:25:30.943 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.NotificationController.GetNotifications (WebAPITask)'
+2025-02-22 12:25:30.945 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5268/api/Notification/GetNotifications - 200 null application/json; charset=utf-8 44.4167ms
+2025-02-22 12:25:44.730 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5268/api/Technician/GetAllTechnicians - null null
+2025-02-22 12:25:44.754 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.TechnicianController.GetAllTechnicians (WebAPITask)'
+2025-02-22 12:25:44.770 +05:30 [INF] Route matched with {action = "GetAllTechnicians", controller = "Technician"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllTechnicians() on controller TmsWebApi.Controllers.TechnicianController (WebAPITask).
+2025-02-22 12:25:44.786 +05:30 [INF] Fetching all technicians.
+2025-02-22 12:25:44.827 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Email], [u].[Password], [u].[PhoneNumber], [u].[Role], [u].[Skills], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Role] = N'Technician'
+2025-02-22 12:25:44.830 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TmsWebApi.Models.User, WebAPITask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-22 12:25:44.832 +05:30 [INF] Executed action TmsWebApi.Controllers.TechnicianController.GetAllTechnicians (WebAPITask) in 46.0854ms
+2025-02-22 12:25:44.833 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.TechnicianController.GetAllTechnicians (WebAPITask)'
+2025-02-22 12:25:44.834 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5268/api/Technician/GetAllTechnicians - 200 null application/json; charset=utf-8 103.3464ms
+2025-02-22 12:25:44.879 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5268/api/Task/GetTaskById/8 - null null
+2025-02-22 12:25:44.886 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.TaskController.GetTaskById (WebAPITask)'
+2025-02-22 12:25:44.904 +05:30 [INF] Route matched with {action = "GetTaskById", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTaskById(Int32) on controller TmsWebApi.Controllers.TaskController (WebAPITask).
+2025-02-22 12:25:44.929 +05:30 [INF] Fetching task with ID: 8
+2025-02-22 12:25:44.931 +05:30 [INF] Fetching task with ID: 8
+2025-02-22 12:25:44.969 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__taskId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[AssignedToId], [t].[Description], [t].[DueDate], [t].[Status], [t].[Title]
+FROM [Tasks] AS [t]
+WHERE [t].[Id] = @__taskId_0
+2025-02-22 12:25:44.981 +05:30 [INF] Executing OkObjectResult, writing value of type 'TmsWebApi.Models.Tasks'.
+2025-02-22 12:25:44.982 +05:30 [INF] Executed action TmsWebApi.Controllers.TaskController.GetTaskById (WebAPITask) in 60.5893ms
+2025-02-22 12:25:44.984 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.TaskController.GetTaskById (WebAPITask)'
+2025-02-22 12:25:44.985 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5268/api/Task/GetTaskById/8 - 200 null application/json; charset=utf-8 105.4233ms
+2025-02-22 12:25:53.086 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5268/api/Task/UpdateTask/8 - application/json; charset=utf-8 141
+2025-02-22 12:25:53.088 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.TaskController.UpdateTask (WebAPITask)'
+2025-02-22 12:25:53.111 +05:30 [INF] Route matched with {action = "UpdateTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateTask(Int32, TechnicianWebAPI.DTOs.UpdateTaskDto) on controller TmsWebApi.Controllers.TaskController (WebAPITask).
+2025-02-22 12:25:53.141 +05:30 [INF] Updating task with ID: 8
+2025-02-22 12:25:53.151 +05:30 [INF] Updating task with ID: 8
+2025-02-22 12:25:53.235 +05:30 [INF] Executed DbCommand (64ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[AssignedToId], [t].[Description], [t].[DueDate], [t].[Status], [t].[Title]
+FROM [Tasks] AS [t]
+WHERE [t].[Id] = @__id_0
+2025-02-22 12:25:53.305 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Tasks] SET [Title] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2025-02-22 12:25:53.325 +05:30 [INF] Task updated successfully with ID: 8
+2025-02-22 12:25:53.339 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-02-22 12:25:53.340 +05:30 [INF] Executed action TmsWebApi.Controllers.TaskController.UpdateTask (WebAPITask) in 223.567ms
+2025-02-22 12:25:53.341 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.TaskController.UpdateTask (WebAPITask)'
+2025-02-22 12:25:53.350 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5268/api/Task/UpdateTask/8 - 204 null null 263.7607ms
+2025-02-22 12:25:53.392 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5268/api/Task/GetAllTasks - null null
+2025-02-22 12:25:53.405 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask)'
+2025-02-22 12:25:53.407 +05:30 [INF] Route matched with {action = "GetAllTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllTasks() on controller TmsWebApi.Controllers.TaskController (WebAPITask).
+2025-02-22 12:25:53.416 +05:30 [INF] Fetching all tasks with assigned technician names.
+2025-02-22 12:25:53.422 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Title], [t].[Description], [t].[DueDate], [t].[Status], [u].[Id] AS [AssignedToId], [u].[Username] AS [AssignedTechnician]
+FROM [Tasks] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[AssignedToId] = [u].[Id]
+2025-02-22 12:25:53.424 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType6`7[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebAPITask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-22 12:25:53.441 +05:30 [INF] Executed action TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask) in 32.5914ms
+2025-02-22 12:25:53.464 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask)'
+2025-02-22 12:25:53.507 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5268/api/Task/GetAllTasks - 200 null application/json; charset=utf-8 115.2996ms
+2025-02-22 12:25:57.132 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5268/api/Task/GetAssignedTasks - null null
+2025-02-22 12:25:57.136 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:25:57.137 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5268/api/Task/GetAssignedTasks - 204 null null 4.4363ms
+2025-02-22 12:25:57.139 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5268/api/Task/GetAssignedTasks - null null
+2025-02-22 12:25:57.151 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5268/api/Task/GetAssignedTasks - null null
+2025-02-22 12:25:57.153 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:25:57.159 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:25:57.171 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5268/api/Task/GetAssignedTasks - 204 null null 32.1585ms
+2025-02-22 12:25:57.188 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.TaskController.GetAssignedTasks (WebAPITask)'
+2025-02-22 12:25:57.201 +05:30 [INF] Route matched with {action = "GetAssignedTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssignedTasks() on controller TmsWebApi.Controllers.TaskController (WebAPITask).
+2025-02-22 12:25:57.219 +05:30 [INF] Fetching assigned tasks for user ID: 5
+2025-02-22 12:25:57.225 +05:30 [INF] Fetching tasks for technician ID: 5
+2025-02-22 12:25:57.256 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[@__technicianId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AssignedToId], [t].[Description], [t].[DueDate], [t].[Status], [t].[Title]
+FROM [Tasks] AS [t]
+WHERE [t].[AssignedToId] = @__technicianId_0
+2025-02-22 12:25:57.259 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TmsWebApi.Models.Tasks, WebAPITask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-22 12:25:57.305 +05:30 [INF] Executed action TmsWebApi.Controllers.TaskController.GetAssignedTasks (WebAPITask) in 86.3468ms
+2025-02-22 12:25:57.317 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5268/api/Task/GetAssignedTasks - null null
+2025-02-22 12:25:57.321 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.TaskController.GetAssignedTasks (WebAPITask)'
+2025-02-22 12:25:57.369 +05:30 [INF] CORS policy execution successful.
+2025-02-22 12:25:57.372 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5268/api/Task/GetAssignedTasks - 200 null application/json; charset=utf-8 220.0882ms
+2025-02-22 12:25:57.383 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.TaskController.GetAssignedTasks (WebAPITask)'
+2025-02-22 12:25:57.390 +05:30 [INF] Route matched with {action = "GetAssignedTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssignedTasks() on controller TmsWebApi.Controllers.TaskController (WebAPITask).
+2025-02-22 12:25:57.401 +05:30 [INF] Fetching assigned tasks for user ID: 5
+2025-02-22 12:25:57.402 +05:30 [INF] Fetching tasks for technician ID: 5
+2025-02-22 12:25:57.405 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__technicianId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AssignedToId], [t].[Description], [t].[DueDate], [t].[Status], [t].[Title]
+FROM [Tasks] AS [t]
+WHERE [t].[AssignedToId] = @__technicianId_0
+2025-02-22 12:25:57.408 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[TmsWebApi.Models.Tasks, WebAPITask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-22 12:25:57.419 +05:30 [INF] Executed action TmsWebApi.Controllers.TaskController.GetAssignedTasks (WebAPITask) in 18.1284ms
+2025-02-22 12:25:57.420 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.TaskController.GetAssignedTasks (WebAPITask)'
+2025-02-22 12:25:57.421 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5268/api/Task/GetAssignedTasks - 200 null application/json; charset=utf-8 104.2524ms

@@ -1,0 +1,193 @@
+2025-01-31 11:42:49.865 +05:30 [INF] Starting the application...
+2025-01-31 11:42:49.936 +05:30 [INF] User profile is available. Using 'C:\Users\muhammed.makkar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-31 11:42:50.034 +05:30 [INF] Now listening on: http://localhost:5268
+2025-01-31 11:42:50.036 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-31 11:42:50.037 +05:30 [INF] Hosting environment: Development
+2025-01-31 11:42:50.038 +05:30 [INF] Content root path: C:\Users\muhammed.makkar\Desktop\Dotnet-test\webapi\TechnicianWebAPI
+2025-01-31 11:43:18.279 +05:30 [INF] Application is shutting down...
+2025-01-31 11:43:43.919 +05:30 [INF] Starting the application...
+2025-01-31 11:43:44.014 +05:30 [INF] User profile is available. Using 'C:\Users\muhammed.makkar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-31 11:43:44.123 +05:30 [INF] Now listening on: http://localhost:5268
+2025-01-31 11:43:44.126 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-31 11:43:44.127 +05:30 [INF] Hosting environment: Development
+2025-01-31 11:43:44.128 +05:30 [INF] Content root path: C:\Users\muhammed.makkar\Desktop\Dotnet-test\webapi\TechnicianWebAPI
+2025-01-31 11:44:08.808 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5268/api/Auth/login - application/json; charset=utf-8 43
+2025-01-31 11:44:08.882 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-01-31 11:44:08.996 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.AuthController.Login (WebAPITask)'
+2025-01-31 11:44:09.031 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(TechnicianWebAPI.DTOs.LoginUserDto) on controller TmsWebApi.Controllers.AuthController (WebAPITask).
+2025-01-31 11:44:09.415 +05:30 [INF] Login attempt for username: Admin
+2025-01-31 11:44:11.540 +05:30 [INF] Executed DbCommand (76ms) [Parameters=[@__request_Username_1='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[PhoneNumber], [u].[Role], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] COLLATE SQL_Latin1_General_CP1_CS_AS = @__request_Username_1
+2025-01-31 11:44:12.443 +05:30 [INF] Login successful for username: Admin
+2025-01-31 11:44:12.457 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`4[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-01-31 11:44:12.578 +05:30 [INF] Executed action TmsWebApi.Controllers.AuthController.Login (WebAPITask) in 3528.3786ms
+2025-01-31 11:44:12.594 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.AuthController.Login (WebAPITask)'
+2025-01-31 11:44:12.628 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5268/api/Auth/login - 200 null application/json; charset=utf-8 3824.1871ms
+2025-01-31 11:44:30.070 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5268/api/Task/GetAllTasks - null null
+2025-01-31 11:44:30.210 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask)'
+2025-01-31 11:44:30.224 +05:30 [INF] Route matched with {action = "GetAllTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllTasks() on controller TmsWebApi.Controllers.TaskController (WebAPITask).
+2025-01-31 11:44:30.266 +05:30 [INF] Fetching all tasks with assigned technician names.
+2025-01-31 11:44:30.441 +05:30 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Title], [t].[Description], [t].[DueDate], [t].[Status], [u].[Id] AS [AssignedToId], [u].[Username] AS [AssignedTechnician]
+FROM [Tasks] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[AssignedToId] = [u].[Id]
+2025-01-31 11:44:30.474 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType5`7[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebAPITask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-31 11:44:30.506 +05:30 [INF] Executed action TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask) in 275.7348ms
+2025-01-31 11:44:30.511 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask)'
+2025-01-31 11:44:30.519 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5268/api/Task/GetAllTasks - 200 null application/json; charset=utf-8 449.5618ms
+2025-01-31 11:45:33.814 +05:30 [INF] Application is shutting down...
+2025-01-31 11:45:57.086 +05:30 [INF] Starting the application...
+2025-01-31 11:45:57.160 +05:30 [INF] User profile is available. Using 'C:\Users\muhammed.makkar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-31 11:45:57.258 +05:30 [INF] Now listening on: http://localhost:5268
+2025-01-31 11:45:57.262 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-31 11:45:57.263 +05:30 [INF] Hosting environment: Development
+2025-01-31 11:45:57.264 +05:30 [INF] Content root path: C:\Users\muhammed.makkar\Desktop\Dotnet-test\webapi\TechnicianWebAPI
+2025-01-31 11:46:06.117 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5268/api/Auth/login - application/json; charset=utf-8 43
+2025-01-31 11:46:06.212 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-01-31 11:46:06.271 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.AuthController.Login (WebAPITask)'
+2025-01-31 11:46:06.308 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(TechnicianWebAPI.DTOs.LoginUserDto) on controller TmsWebApi.Controllers.AuthController (WebAPITask).
+2025-01-31 11:46:06.622 +05:30 [INF] Login attempt for username: Admin
+2025-01-31 11:46:08.319 +05:30 [INF] Executed DbCommand (57ms) [Parameters=[@__request_Username_1='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[PhoneNumber], [u].[Role], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] COLLATE SQL_Latin1_General_CP1_CS_AS = @__request_Username_1
+2025-01-31 11:46:09.446 +05:30 [INF] Login successful for username: Admin
+2025-01-31 11:46:09.458 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`4[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-01-31 11:46:09.510 +05:30 [INF] Executed action TmsWebApi.Controllers.AuthController.Login (WebAPITask) in 3186.547ms
+2025-01-31 11:46:09.531 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.AuthController.Login (WebAPITask)'
+2025-01-31 11:46:09.557 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5268/api/Auth/login - 200 null application/json; charset=utf-8 3444.6968ms
+2025-01-31 11:46:36.081 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5268/api/Task/GetAllTasks - null null
+2025-01-31 11:46:36.136 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask)'
+2025-01-31 11:46:36.145 +05:30 [INF] Route matched with {action = "GetAllTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllTasks() on controller TmsWebApi.Controllers.TaskController (WebAPITask).
+2025-01-31 11:46:36.167 +05:30 [INF] Fetching all tasks with assigned technician names.
+2025-01-31 11:46:36.238 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Title], [t].[Description], [t].[DueDate], [t].[Status], [u].[Id] AS [AssignedToId], [u].[Username] AS [AssignedTechnician]
+FROM [Tasks] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[AssignedToId] = [u].[Id]
+2025-01-31 11:46:36.252 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType5`7[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebAPITask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-31 11:46:36.430 +05:30 [INF] Executed action TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask) in 283.3925ms
+2025-01-31 11:46:36.434 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask)'
+2025-01-31 11:46:36.437 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5268/api/Task/GetAllTasks - 200 null application/json; charset=utf-8 356.3414ms
+2025-01-31 11:47:34.871 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5268/api/Auth/login - application/json 52
+2025-01-31 11:47:34.897 +05:30 [INF] CORS policy execution failed.
+2025-01-31 11:47:34.900 +05:30 [INF] Request origin http://localhost:5268 does not have permission to access the resource.
+2025-01-31 11:47:34.917 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.AuthController.Login (WebAPITask)'
+2025-01-31 11:47:34.920 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(TechnicianWebAPI.DTOs.LoginUserDto) on controller TmsWebApi.Controllers.AuthController (WebAPITask).
+2025-01-31 11:47:34.937 +05:30 [INF] Login attempt for username: Admin
+2025-01-31 11:47:35.093 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__request_Username_1='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[PhoneNumber], [u].[Role], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] COLLATE SQL_Latin1_General_CP1_CS_AS = @__request_Username_1
+2025-01-31 11:47:35.599 +05:30 [INF] Login successful for username: Admin
+2025-01-31 11:47:35.602 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`4[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-01-31 11:47:35.607 +05:30 [INF] Executed action TmsWebApi.Controllers.AuthController.Login (WebAPITask) in 677.7527ms
+2025-01-31 11:47:35.610 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.AuthController.Login (WebAPITask)'
+2025-01-31 11:47:35.616 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5268/api/Auth/login - 200 null application/json; charset=utf-8 742.3495ms
+2025-01-31 11:47:59.467 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5268/api/Task/GetAllTasks - null null
+2025-01-31 11:47:59.481 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask)'
+2025-01-31 11:47:59.487 +05:30 [INF] Route matched with {action = "GetAllTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllTasks() on controller TmsWebApi.Controllers.TaskController (WebAPITask).
+2025-01-31 11:47:59.496 +05:30 [INF] Fetching all tasks with assigned technician names.
+2025-01-31 11:47:59.512 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Title], [t].[Description], [t].[DueDate], [t].[Status], [u].[Id] AS [AssignedToId], [u].[Username] AS [AssignedTechnician]
+FROM [Tasks] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[AssignedToId] = [u].[Id]
+2025-01-31 11:47:59.518 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType5`7[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebAPITask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-31 11:47:59.526 +05:30 [INF] Executed action TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask) in 31.9746ms
+2025-01-31 11:47:59.528 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask)'
+2025-01-31 11:47:59.533 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5268/api/Task/GetAllTasks - 200 null application/json; charset=utf-8 65.4376ms
+2025-01-31 11:48:45.893 +05:30 [INF] Application is shutting down...
+2025-01-31 11:49:16.611 +05:30 [INF] Starting the application...
+2025-01-31 11:49:16.670 +05:30 [INF] User profile is available. Using 'C:\Users\muhammed.makkar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-31 11:49:16.740 +05:30 [INF] Now listening on: http://localhost:5268
+2025-01-31 11:49:16.743 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-31 11:49:16.747 +05:30 [INF] Hosting environment: Development
+2025-01-31 11:49:16.748 +05:30 [INF] Content root path: C:\Users\muhammed.makkar\Desktop\Dotnet-test\webapi\TechnicianWebAPI
+2025-01-31 11:49:43.245 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5268/api/Auth/login - application/json; charset=utf-8 43
+2025-01-31 11:49:43.335 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-01-31 11:49:43.396 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.AuthController.Login (WebAPITask)'
+2025-01-31 11:49:43.429 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(TechnicianWebAPI.DTOs.LoginUserDto) on controller TmsWebApi.Controllers.AuthController (WebAPITask).
+2025-01-31 11:49:43.714 +05:30 [INF] Login attempt for username: Admin
+2025-01-31 11:49:45.346 +05:30 [INF] Executed DbCommand (51ms) [Parameters=[@__request_Username_1='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[PhoneNumber], [u].[Role], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] COLLATE SQL_Latin1_General_CP1_CS_AS = @__request_Username_1
+2025-01-31 11:49:46.275 +05:30 [INF] Login successful for username: Admin
+2025-01-31 11:49:46.287 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`4[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-01-31 11:49:46.353 +05:30 [INF] Executed action TmsWebApi.Controllers.AuthController.Login (WebAPITask) in 2891.611ms
+2025-01-31 11:49:46.369 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.AuthController.Login (WebAPITask)'
+2025-01-31 11:49:46.389 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5268/api/Auth/login - 200 null application/json; charset=utf-8 3148.0214ms
+2025-01-31 11:50:21.460 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5268/api/Task/GetAllTasks - null null
+2025-01-31 11:50:21.528 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask)'
+2025-01-31 11:50:21.536 +05:30 [INF] Route matched with {action = "GetAllTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllTasks() on controller TmsWebApi.Controllers.TaskController (WebAPITask).
+2025-01-31 11:50:21.551 +05:30 [INF] Fetching all tasks with assigned technician names.
+2025-01-31 11:50:21.622 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Title], [t].[Description], [t].[DueDate], [t].[Status], [u].[Id] AS [AssignedToId], [u].[Username] AS [AssignedTechnician]
+FROM [Tasks] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[AssignedToId] = [u].[Id]
+2025-01-31 11:50:21.632 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType5`7[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebAPITask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-31 11:50:21.645 +05:30 [INF] Executed action TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask) in 106.8694ms
+2025-01-31 11:50:21.648 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask)'
+2025-01-31 11:50:21.650 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5268/api/Task/GetAllTasks - 200 null application/json; charset=utf-8 191.4263ms
+2025-01-31 11:55:02.962 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5268/api/Task/GetAllTasks - null null
+2025-01-31 11:55:03.012 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask)'
+2025-01-31 11:55:03.017 +05:30 [INF] Route matched with {action = "GetAllTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllTasks() on controller TmsWebApi.Controllers.TaskController (WebAPITask).
+2025-01-31 11:55:03.037 +05:30 [INF] Fetching all tasks with assigned technician names.
+2025-01-31 11:55:03.227 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Title], [t].[Description], [t].[DueDate], [t].[Status], [u].[Id] AS [AssignedToId], [u].[Username] AS [AssignedTechnician]
+FROM [Tasks] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[AssignedToId] = [u].[Id]
+2025-01-31 11:55:03.234 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType5`7[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebAPITask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-31 11:55:03.240 +05:30 [INF] Executed action TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask) in 216.971ms
+2025-01-31 11:55:03.248 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask)'
+2025-01-31 11:55:03.252 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5268/api/Task/GetAllTasks - 200 null application/json; charset=utf-8 289.8734ms
+2025-01-31 11:55:03.280 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5268/api/Task/GetAllTasks - null null
+2025-01-31 11:55:03.288 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask)'
+2025-01-31 11:55:03.289 +05:30 [INF] Route matched with {action = "GetAllTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllTasks() on controller TmsWebApi.Controllers.TaskController (WebAPITask).
+2025-01-31 11:55:03.295 +05:30 [INF] Fetching all tasks with assigned technician names.
+2025-01-31 11:55:03.300 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Title], [t].[Description], [t].[DueDate], [t].[Status], [u].[Id] AS [AssignedToId], [u].[Username] AS [AssignedTechnician]
+FROM [Tasks] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[AssignedToId] = [u].[Id]
+2025-01-31 11:55:03.303 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType5`7[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebAPITask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-31 11:55:03.305 +05:30 [INF] Executed action TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask) in 14.6889ms
+2025-01-31 11:55:03.307 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask)'
+2025-01-31 11:55:03.311 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5268/api/Task/GetAllTasks - 200 null application/json; charset=utf-8 36.5754ms
+2025-01-31 11:55:31.658 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5268/api/Task/GetAllTasks - null null
+2025-01-31 11:55:31.665 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask)'
+2025-01-31 11:55:31.668 +05:30 [INF] Route matched with {action = "GetAllTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllTasks() on controller TmsWebApi.Controllers.TaskController (WebAPITask).
+2025-01-31 11:55:31.677 +05:30 [INF] Fetching all tasks with assigned technician names.
+2025-01-31 11:55:31.690 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Title], [t].[Description], [t].[DueDate], [t].[Status], [u].[Id] AS [AssignedToId], [u].[Username] AS [AssignedTechnician]
+FROM [Tasks] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[AssignedToId] = [u].[Id]
+2025-01-31 11:55:31.697 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType5`7[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebAPITask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-31 11:55:31.707 +05:30 [INF] Executed action TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask) in 30.7051ms
+2025-01-31 11:55:31.712 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.TaskController.GetAllTasks (WebAPITask)'
+2025-01-31 11:55:31.715 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5268/api/Task/GetAllTasks - 200 null application/json; charset=utf-8 56.8008ms
+2025-01-31 12:01:10.652 +05:30 [INF] Application is shutting down...
+2025-01-31 12:48:44.183 +05:30 [INF] Starting the application...
+2025-01-31 12:48:44.249 +05:30 [INF] User profile is available. Using 'C:\Users\muhammed.makkar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-31 12:48:44.337 +05:30 [INF] Now listening on: http://localhost:5268
+2025-01-31 12:48:44.341 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-31 12:48:44.343 +05:30 [INF] Hosting environment: Development
+2025-01-31 12:48:44.347 +05:30 [INF] Content root path: C:\Users\muhammed.makkar\Desktop\Dotnet-test\webapi\TechnicianWebAPI
+2025-01-31 16:42:10.814 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5268/api/auth/login - null null
+2025-01-31 16:42:10.903 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-01-31 16:42:10.907 +05:30 [INF] CORS policy execution successful.
+2025-01-31 16:42:10.924 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5268/api/auth/login - 204 null null 113.7542ms
+2025-01-31 16:42:10.960 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5268/api/auth/login - application/json 55
+2025-01-31 16:42:10.974 +05:30 [INF] CORS policy execution successful.
+2025-01-31 16:42:11.046 +05:30 [INF] Executing endpoint 'TmsWebApi.Controllers.AuthController.Login (WebAPITask)'
+2025-01-31 16:42:11.078 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(TechnicianWebAPI.DTOs.LoginUserDto) on controller TmsWebApi.Controllers.AuthController (WebAPITask).
+2025-01-31 16:42:11.406 +05:30 [INF] Login attempt for username: 7645967868789
+2025-01-31 16:42:13.447 +05:30 [INF] Executed DbCommand (72ms) [Parameters=[@__request_Username_1='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[PhoneNumber], [u].[Role], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] COLLATE SQL_Latin1_General_CP1_CS_AS = @__request_Username_1
+2025-01-31 16:42:13.484 +05:30 [WRN] Login failed: User not found for username: 7645967868789
+2025-01-31 16:42:13.495 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType1`2[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-01-31 16:42:13.529 +05:30 [INF] Executed action TmsWebApi.Controllers.AuthController.Login (WebAPITask) in 2440.4078ms
+2025-01-31 16:42:13.533 +05:30 [INF] Executed endpoint 'TmsWebApi.Controllers.AuthController.Login (WebAPITask)'
+2025-01-31 16:42:13.549 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5268/api/auth/login - 401 null application/json; charset=utf-8 2589.3657ms

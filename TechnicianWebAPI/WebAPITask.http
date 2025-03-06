@@ -1,0 +1,6 @@
+@RegLogAPI_HostAddress = http://localhost:5268
+
+GET {{RegLogAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
